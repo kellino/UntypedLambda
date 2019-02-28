@@ -1,0 +1,39 @@
+true tt ff = tt
+
+false tt ff = ff
+
+cond u v w = u v w
+
+pair m n b = cond b m d
+
+fst p = p true
+
+snd p = p false
+
+zero = λf. λx. x
+
+one = λf. λx. f x
+
+two = λf. λx. f (f x)
+
+three = λf. λx. f (f (f x))
+
+pzero = pair two zero
+
+isZero n = n (\x. false) true 
+
+succ n f x = n f (f x)
+
+four = succ three
+
+five = succ four
+
+infixl 7 +
+m + n = m succ n
+
+mult = λm.λn.λf.λx. m (n f) x
+
+infixl 7 ^
+m ^ n = \x.\f. n m f x
+
+main = snd pzero

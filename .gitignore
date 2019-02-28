@@ -1,0 +1,4 @@
+*.ghci
+.stack-work/
+Untyped.cabal
+*~
